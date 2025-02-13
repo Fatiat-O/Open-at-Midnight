@@ -84,6 +84,18 @@
             50% { background-color: #ffe6e6; } /* Light pink */
             100% { background-color: #fff0e6; } /* Back to soft peach */
         }
+
+.heart {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+        
     </style>
 </head>
 <body>
@@ -102,7 +114,8 @@
         <p id="text10" class="hidden"><strong>Happy Valentine’s Day, my love! ❤️</strong></p>
         <p id="text11" class="hidden">May Almighty Allah keep us together in love, peace, mercy, and endless happiness. Ameen🥰 </p>
         <p id="text12" class="hidden"><em>P.S. You owe me extra cuddles and so much coffee 😉</em></p>
-        <p id="text13" class="hidden heart">❤️ With all of my love, Fatiat ❤️</p> 
+        <p id="text13" class="hidden heart">❤️ With all of my love, Fatiat ❤️</p>
+ 
         
         <!-- Tap Icon -->
         <div id="tapIcon">👆 Tap to continue...</div>
