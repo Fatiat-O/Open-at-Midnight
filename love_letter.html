@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fff0e6; /* Soft peach */
+            background-image: url('https://www.transparenttextures.com/patterns/white-plaster.png'); /* Embossed effect */
+            text-align: center;
+            padding: 30px;
+            overflow-x: hidden; /* Allows vertical scrolling but prevents horizontal overflow */
+            animation: fadeBackground 20s infinite alternate ease-in-out; /* Slow and soft */
+        }
+
+        .container {
+            background: #fffaf0; /* Light cream */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+            border: 2px solid #ffb07c; /* Warm peach border */
+        }
+
+        h1 {
+            color: #cc4b4b; /* Soft red */
+            font-size: 26px;
+            text-shadow: 0 0 8px rgba(255, 46, 99, 0.7);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #5a3d2b; /* Deep brown */
+        }
+
+        .heart {
+            color: red;
+            font-size: 30px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Floating Hearts Animation */
+        @keyframes floatHearts {
+            0% {
+                transform: translateY(0vh) scale(0.8);
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .heart-animation {
+            position: absolute;
+            bottom: 0;
+            font-size: 24px;
+            color: red;
+            opacity: 0.8;
+            animation: floatHearts 8s linear infinite;
+        }
+
+        .heart-animation:nth-child(1) { left: 10%; animation-duration: 9s; }
+        .heart-animation:nth-child(2) { left: 30%; animation-duration: 10s; }
+        .heart-animation:nth-child(3) { left: 50%; animation-duration: 8s; }
+        .heart-animation:nth-child(4) { left: 70%; animation-duration: 11s; }
+        .heart-animation:nth-child(5) { left: 90%; animation-duration: 7s; }
+
+        @keyframes fadeBackground {
+            0% { background-color: #fff0e6; } /* Soft peach */
+            50% { background-color: #ffe6e6; } /* Light pink */
+            100% { background-color: #fff0e6; } /* Back to soft peach */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day, 여보 ❤️</h1>
+        
+        <p id="text1" class="hidden"><strong>Hammed,</strong></p>
+        <p id="text2" class="hidden">Every day with you feels like a gift, but today, I just want to take a moment to remind you how much I love and appreciate you.</p>
+        <p id="text3" class="hidden">You make my world brighter, my heart warmer, and my life so much sweeter.</p>
+        <p id="text4" class="hidden">Thank you for being you. </p>
+        <p id="text5" class="hidden">Kind.</p>
+        <p id="text6" class="hidden">Thoughtful.</p>
+        <p id="text7" class="hidden">And absolutely amazing 🤗.</p>
+        <p id="text8" class="hidden">I love you so so much, and I’m so grateful for you. 
+        <p id="text9" class="hidden">I hope this makes you smile (or at least miss me a tiny bit more).</p>
+        <p id="text10" class="hidden"><strong>Happy Valentine’s Day, my love! ❤️</strong></p>
+        <p id="text11" class="hidden">May Almighty Allah keep us together in love, peace, mercy, and endless happiness. Ameen🥰 </p>
+        <p id="text12" class="hidden"><em>P.S. You owe me extra cuddles and so much coffee 😉</em></p>
+        <p id="text13" class="hidden heart">❤️ With all of my love, Fatiat ❤️</p> 
+        
+        <!-- Tap Icon -->
+        <div id="tapIcon">👆 Tap to continue...</div>
+    </div>
+    
+    <!-- Background Music -->
+    <audio id="loveMusic" loop>
+        <source src="Music2.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        let currentIndex = 0;
+        const texts = document.querySelectorAll(".hidden");
+        const tapIcon = document.getElementById("tapIcon");
+        const music = document.getElementById("loveMusic");
+    
+        document.addEventListener("click", function() {
+            if (currentIndex === 0) {
+                // First tap starts music
+                let playPromise = music.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {}); // Catch autoplay errors silently
+                }
+            }
+    
+            if (currentIndex < texts.length) {
+                texts[currentIndex].classList.add("fadeIn");
+                currentIndex++;
+            } else {
+                tapIcon.style.display = "none"; // Hide tap prompt when finished
+            }
+        });
+    </script>
+    
+    <style>
+        .hidden {
+            display: none;
+        }
+        .fadeIn {
+            display: block;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        #tapIcon {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff2e63;
+            text-align: center;
+            animation: pulse 1.5s infinite;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+    
+    <!-- Background Music (Plays Automatically) -->
+    <audio id="loveMusic" loop>
+        <source src="Music2.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        window.addEventListener("load", function() {
+            let audio = document.getElementById("loveMusic");
+            
+            // Try playing immediately (if browser allows)
+            let playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // If autoplay is blocked, wait for a user interaction
+                    document.addEventListener("click", () => {
+                        audio.play();
+                    }, { once: true }); // Ensures it only triggers once
+                });
+            }
+        });
+    </script>
+    
+    <!-- Floating hearts -->
+    <div class="heart-animation">❤️</div>
+    <div class="heart-animation">❤️</div>
+    <div class="heart-animation">❤️</div>
+    <div class="heart-animation">❤️</div>
+    <div class="heart-animation">❤️</div>
+</body>
+</html>
